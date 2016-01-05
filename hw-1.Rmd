@@ -1,0 +1,177 @@
+---
+title: "Wharton Accounting -- Homework 1"
+author: "Joe Nguyen"
+date: "5 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+
+### Question 1
+Which of the following is a required financial statement?  
+**Statement of Cash Flows**
+
+All statements are:
+
+- Balance Sheet
+- Income Statement
+- Statement of Cash Flows
+- Statement of Stockholders' Equity
+
+
+### Question 2
+Which of the following items reduce Net income?
+
+**Expenses** since:
+$$
+\text{Net Income} = \text{Revenue} - \text{Expenses}
+$$
+
+
+### Question 3
+What are Revenues in the table below?  
+
+| Item | Value |
+| --- | --- |
+| Total Assets |	300 |
+| Total Liabilities | 	160 |
+| **Total Stockholders' Equity** |	 |
+| Beginning Retained Earnings| 	50 |
+| Ending Retained Earnings| 	60 |
+| Dividends| 	15 |
+| Revenues| 	? |
+| Expenses| 	100 |
+| **Net Income** | 	 |
+| Cash| 	30 |
+
+$$
+\begin{align}
+\text{Assets} = \text{Liabilities} &+ \text{Stockholders' Equity} \\
+                                   &+ \left( \text{Contributed Capital} + \text{Retained Earnings} \right)
+\end{align}
+$$
+$$
+\begin{align}
+\text{Retained Earnings} = \text{Prior Retained Earnings} &+ \text{Net Income} - \text{Dividends} \\
+                                                          &+ \left( \text{Revenue} - \text{Expenses} \right)
+\end{align}
+$$
+
+Rearranging for Revenues:  
+$$
+\text{Revenue} = \text{Assets} - \text{Liabilities} - \text{Contributed Capital} - \text{Prior Retained Earnings} + \text{Expenses} + \text{Dividends}
+$$
+```{r}
+300 - 160 - 50 + 100 + 15
+```
+
+or just looking at **Stockholders' Equity**:  
+$$
+\text{Retained Earnings} = \text{Prior Retained Earnings} + \left( \text{Revenue} - \text{Expenses} \right) - \text{Dividends}
+$$
+$$
+\text{Revenue} = \text{Retained Earnings} - \text{Prior Retained Earnings} + \text{Expenses} + \text{Dividends}
+$$
+```{r}
+60 - 50 + 100 + 15
+```
+
+
+### Question 4
+Which of the following transactions violate the balance sheet equation?  
+
+- **Increase Retained Earnings and increase a Liability**
+- **Reduce cash and reduce an expense**
+- **Increase a liability and increase a revenue**
+- **Increase an expense and reduce a liability**
+
+NOTE: Cash is an asset (on LHS of equation).
+
+#### Above incorrect, include:  
+- **Increase cash and reduce contributed capital**
+
+
+### Question 5
+Which of the following are assets?
+
+- **Cash**
+- **Accounts Receivable** -- money owed to company by its debtors
+
+| Other choices | Type |
+| --- | --- |
+| Accounts Payable | Liability |
+| Retained Earnings | Equity |
+| Common Stock | Equity |
+
+
+### Question 6
+Which of the following accounts would be increased with a Debit?  
+
+- **Land** (asset)
+- **Cash** (asset)
+- **Advertising Expense** (expense)
+- **Prepaid Insurance** (asset)
+
+**Accounts Payable** (liability) decreases with a Debit.
+
+
+### Question 7
+Which of these journal entries represent paying cash to buy an asset?  
+
+Dr. Truck 5000  
+    Cr. Cash    5000
+
+Dr. Prepaid Insurance     500  
+    Cr. Cash                         500
+
+Dr.  Advances from Customers    50  
+    Cr.  Cash                                       50
+
+#### Above incorrect, remove:  
+Advances from Customers  
+
+
+### Question 8
+Which journal entry reflects the following transaction:  
+BOC sold 10,000 shares of $1 par value stock to investors for $5 per share.
+
+Dr. Cash    50,000  
+    Cr. Common Stock                10,000  
+    Cr. Additional Paid-in Capital  40,000  
+
+
+### Question 9
+Which journal entry reflects the following transaction:  
+BOC bought $10,000 of inventory on account.
+
+Dr. Inventory   10,000
+    Cr. Cash        10,000
+
+#### Above incorrect:  
+No cash was paid, instead, CR Accounts Payable (+L)
+
+Dr. Inventory   10,000  
+    Cr. Accounts Payable (+L)        10,000
+    
+
+### Question 10
+Which journal entry reflects the following transaction:  
+BOC declared a $9,000 dividend to be paid in cash next month.
+
+Dr. Retained Earnings (-SE)   9,000  
+    Cr. Dividends Payable (+L)  9,000
+
+
+
+
