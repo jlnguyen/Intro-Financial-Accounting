@@ -1,0 +1,155 @@
+---
+title: "Wharton Accounting -- Homework 2"
+author: "Joe Nguyen"
+date: "11 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+
+### Question 1
+Which of these transactions would produce $10,000 of revenue in December? (check all that apply)  
+
+Revenue is recognised when it is **both** (1) earned (goods/services provided) and (2) realised (payments for goods/services received in cash or credit)
+
+- **BOC delivered $10,000 of goods in December to customers that ordered them and have 30 days to pay for them.**
+- **BOC signed a contract to deliver $10,000 of goods to a customer in January.**
+
+
+Non-revenue producing transactions:
+
+- BOC collected $10,000 of cash in December from customers who received goods in November.
+    - Revenue already recognised in November when goods were provided (and asset was recognised (dr))
+
+- BOC delivered $10,000 of goods in December to a customer that paid a $10,000 cash deposit in November.
+    - Revenue already recognised in November when customer paid cash
+
+- BOC collected a $10,000 deposit in December for goods it will ship in January.
+    - Goods not yet provided (Dr Cash +A; Cr Liability +L)
+
+#### Above incorrect, include:
+
+- BOC delivered $10,000 of goods in December to a customer that paid a $10,000 cash deposit in November.
+    - Both criteria satisfied in December (cash has been paid by December)
+
+Exclude:
+
+- BOC signed a contract to deliver $10,000 of goods to a customer in January.
+    - Goods won't be provided until January.
+
+
+### Question 2
+Which of these transactions would produce $10,000 of expenses in December? (check all that apply)
+
+Expenses are recognised when **either** (1) related revenues are recognised (product) costs or (2) incurred.
+
+- **BOC pays its advertising agency $10,000 in December for ads that ran in December.**
+- **BOC pays its auditor $12,000 in December for all of the work the auditor performed during the year.**
+- 
+
+Non-expense transactions:
+
+- BOC pays $10,000 in cash dividends in December.
+    - Dividends not recognised as expense
+    
+- BOC hires a new COO in December to start work in January. The COO will be paid $10,000 per month.
+    - COO has not yet worked
+
+- BOC receives a $10,000 invoice from its lawyers for services performed in December. The bill is due in January.
+    - Not yet paid
+
+#### Above incorrect, include:
+
+- BOC receives a $10,000 invoice from its lawyers for services performed in December. The bill is due in January.
+    - These are period costs. We expense these costs when incurred; i.e., when the people work for us. This choice involves $10,000 of cost for work provided in December.
+    
+Exclude:
+
+- BOC pays its auditor $12,000 in December for all of the work the auditor performed during the year.
+    - These are period costs. We expense these costs when incurred; i.e., when the people work for us. This choice involves work for the whole year, so the expense would only be $1000 for December (assuming equal work per month)
+
+
+### Question 3
+Which journal entry reflects the following transaction?:  
+BOC receives a $2,000 cash deposit from a customer for custom goods that will be delivered next year.  
+**Dr.  Cash           2,000**  
+   **Cr.  Advances from Customers     2,000**
+
+
+### Question 4
+Which journal entry(s) reflects the following transaction?:  
+BOC received $10,000 of cash from a customer who took delivery of goods that originally cost BOC $8,000 to acquire.
+
+**Dr. Cash (+A)                       10,000**  
+    **Cr.  Revenue (+R, +SE)                    10,000**  
+**Dr.  Cost of Goods Sold (+E, -SE)   8,000**  
+    **Cr.  Inventory (-A)                     8,000**
+    
+    
+### Question 5
+How much annual depreciation expense would be recognized for a truck that originally cost $30,000 and has an estimated useful life of 5 years with a $5,000 salvage value?  
+
+```{r}
+(30e3 - 5e3) / 5
+```
+**$5,000**
+
+
+### Question 6
+Which journal entry reflects the adjusting entry needed on December 31?:  
+In November, BOC prepaid $30,000 of rent for December, January, and February (and it was recorded properly). Now, it is December 31, the end of the fiscal year.
+
+**Dr. Rent Expense (+E, -SE)  10,000**  
+    **Cr. Prepaid Rent (+A)       10,000**
+    
+
+### Question 7
+Which journal entry reflects the adjusting entry needed on December 31?:  
+Last year, BOC purchased software for $10,000. The expected life of the software is 2 years and it has no expected salvage value. Now, it is December 31, the end of the fiscal year. No other entries were recorded for this software during the year.
+
+**Dr. Software Amortization Expense (+E, -SE)   5,000**  
+    ** Cr. Software (-A)        5,000**
+
+Note: Intangible asset is reduced, instead of accuring depreciation.
+    
+### Question 8
+Which journal entry reflects the adjusting entry needed on December 31?:  
+In September, BOC received an order for $500,000 of products that will be delivered and billed in January. Now, it is December 31, the end of the fiscal year, and no prior entry has been recorded for this order.
+
+**Dr. Accounts Receivable     500,000**  
+    **Cr. Unearned Revenue        500,000**
+
+#### Above incorrect:  
+There should be **no adjusting entry**
+
+
+### Question 9
+Which item would not appear on a Balance Sheet?  
+**Gross Profit** which appears on the *Income Statement*
+
+
+### Question 10
+Which of the following are permanent accounts? (check all that apply)  
+
+aka **real accounts** -- accounts which do not close at the end of the account year. These include all the balance sheet accounts: assets, liabilities, owner's equity
+
+- **Retained earnings**
+- **Common stock**
+- **Unearned Revenue**
+
+Temporary(non-permanent) accounts:
+
+- Revenue
+- Cost of Goods Sold
+
