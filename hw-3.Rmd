@@ -1,0 +1,153 @@
+---
+title: "Wharton Accounting -- Homework 3"
+author: "Joe Nguyen"
+date: "14 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+
+### Question 1
+Which of the following would be a cash flow from operating activities? (check all that apply)  
+
+- **Amortisation of a patent**
+- **Loss on sale of equipment**
+- **Collections from customers**
+- **Payments for salaries and wages**
+
+Others:
+- Purchases of equipment (Investing)
+
+#### Above Incorrect, correct items:
+- **Collections from customers**
+- **Payments for salaries and wages**
+
+Non-operating:
+- Amortisation of a patent (noncash transaction)
+- Loss on sale of equipment(investing)
+
+
+### Question 2
+Which of the following would be a cash flow from investing activities? (check all that apply)  
+
+- **Payments to acquire a company**
+- **Proceeds from selling equipment**
+
+Others:
+- Depreciation on a building (operating)
+- Proceeds from issuing stock (financing)
+- Purchases of inventory (operating)
+
+
+### Question 3
+A company has the following cash flows:
+
+Cash from operations 10
+Cash from investing activities (1)
+Cash from financing activities (9)
+
+Which growth stage best describes this pattern of cash flows?  
+**Stable**
+
+#### Above Incorrect, perhaps:
+**Perky (lively)** lots of negative financing cash flow due to issuing of stocks
+
+
+### Question 4
+A company bought $50,000 of inventory for $20,000 cash, with the balance due to the supplier in 30 days. What is the operating cash flow in this transaction?  
+**($20,000)**
+
+
+### Question 5
+Which of the following would be shown as a positive number in the Operating section of the SCF under the indirect method? (check all that apply)  
+
+For indirect method, subtract debits and add credits to keep cash neutral:
+$$
+\begin{align}
+\text{Debits} &= \text{Credits} \\
+\text{Cash} + \text{Non-cash Assets} &= \text{Liabilities} + \text{Owner's Equity}
+\end{align}
+$$
+
+- **Depreciation on a building**
+- **Increase in Income Taxes Payable**
+- **Decrease in Inventory**
+
+Negative:
+
+- Proceeds from a mortgage
+- Gain on sale of equipment
+
+
+### Question 6
+A company has Net Income of $20, which included $4 of depreciation expense. There were no other noncash expenses in Net Income and there were no gains or losses. Accounts receivable was $40 at the beginning of the year and $25 at the end of the year. Accounts Payable was $25 at the beginning of the year and $15 at the end of the year. Inventory was $22 at the beginning of the year and $27 at the end of the year. All other balance sheet accounts were unchanged over the year. What was the company’s Cash Flow from Operating Activities?
+
+| Items | Indirect SCF |
+| --- | --- | --- |
+| Net Income | 20 |
+| Depreciation Expenses | 4 |
+| Change in Accounts Receivable | (25) - (40) = 15 |
+| Change in Accounts Payable | 15 - 25 = (10) |
+| Change in Inventory | (27) - (22) = (5) |
+| **Net Cash from Operations** | **24** |
+
+
+### Question 7
+A company put together a preliminary version of its financial statements. Its Net Income was $200, its Depreciation Expense was $40, and its Cash Flow from Operations was $90. The accountant found an error in computing straight-line Depreciation Expense. It should have been $50. What is Cash from Operations after fixing this mistake? (you can ignore taxes)
+
+```{r}
+adjustments <- 90 - 200 - 40; adjustments
+cash.operations <- 200 + 50 + adjustments; cash.operations
+```
+
+
+#### Above incorrect, answer:
+**90**  
+Net Income would drop by $10 with the extra expense. The amount of depreciation expense added back would go up by $10. These would cancel each other out and there would be no effect on Cash from Operations. So, Cash from Operations would remain at $90. 
+
+
+### Question 8
+A company sold PP&E for $100 cash. Prior to the sale, the net book value of the PP&E on the financial statements was $80. Thus, the company recorded a Gain on Sale of Equipment of $20 in Net Income. What is the investing cash flow in this transaction?
+**$100** Proceed from sale of PPE on SCF  
+"Gain of sale of PP: 20" goes on income statement
+
+
+### Question 9
+Which of the following transactions would result in the change in Inventory on the SCF being a different number than the change in Inventory on the Balance Sheet? (check all that apply)
+
+- **Some of the inventory came in the acquisition of another company**
+- **Some of the inventory was purchased on account**
+- **Some of the inventory is held by subsidiaries in countries that use a different currency**
+
+SCF Complications (Lecture Slides-3.3.1-more-scf-ebitda); corresponding categories for above items:
+
+- Acquisitions and divestitures of businesses
+- Noncash investing and financing activities
+- Foreign Currency Translation Adjustments
+
+Non-items:
+- Some of the inventory was sold for cash
+- Some of the inventory was stolen by employees
+
+
+### Question 10
+A company had EBITDA of $1000, Depreciation and Amortization Expense of $100, Interest Expense of $100, and Tax Expense of $50. What was the company’s Net Income?
+
+| Net Income | 1,000 - 100 - 100 - 50 = **750** |
+| --- | --- |
+| Depreciation and Amortization Expense | 100 |
+| Interest Expense | 100 | 
+| Tax Expense | 50 |
+| EBITDA | 1,000 |
+

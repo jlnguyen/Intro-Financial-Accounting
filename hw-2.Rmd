@@ -147,9 +147,12 @@ aka **real accounts** -- accounts which do not close at the end of the account y
 - **Retained earnings**
 - **Common stock**
 - **Unearned Revenue**
+- Dividends Payable
 
-Temporary(non-permanent) accounts:
+Temporary (non-permanent) accounts:
 
 - Revenue
 - Cost of Goods Sold
+- Income Tax Expense
+
 

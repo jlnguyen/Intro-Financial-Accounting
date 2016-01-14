@@ -1,0 +1,148 @@
+---
+title: "Wharton Accounting -- Homework 2, Attempt 2"
+author: "Joe Nguyen"
+date: "12 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+
+### Question 1
+Which of these transactions would produce $10,000 of revenue in December? (check all that apply)
+
+- **BOC collected $10,000 of cash in December from customers who received goods in November.**
+    - goods provided and cash collected
+- **BOC delivered $10,000 of goods in December to a customer that paid a $10,000 cash deposit in November.**
+    - cash collected and goods provided
+- **BOC delivered $10,000 of goods in December to customers that ordered them and have 30 days to pay for them.**
+    - goods provided and contract received
+
+
+Exclude:
+
+- BOC signed a contract to deliver $10,000 of goods to a customer in January.
+    - Goods won't be provided until January.
+- BOC collected a $10,000 deposit in December for goods it will ship in January.
+    - Goods not yet provided
+
+
+#### Above incorrect, exclude:
+
+- BOC collected $10,000 of cash in December from customers who received goods in November.
+    - The two revenue recognition criteria are earned and realized. In this choice, BOC satisfied those criteria in November (booking all of the revenue then). 
+
+
+### Question 2
+Which of these transactions would produce $10,000 of expenses in December? (check all that apply)
+
+- **BOC sells batteries costing $10,000 in December for $12,000 cash.**
+    - Dr. Batteries expense (+E, -SE) $10,000
+    - Cr. Batteries Inventory (-A) $10,000
+    - Dr. cash (+A) $12,000
+    - Cr. Revenue (+R, +SE) $12,000
+- **BOC sells batteries costing $8,000 in December for $10,000 cash.**
+    
+
+Exclude:
+
+- BOC buys $10,000 of copper in December. 
+    - Raw material copper not yet manufactured in products and sold
+- BOC uses copper to make batteries at a total cost of $10,000 in December. 
+    - products not yet sold
+- BOC signs a contract in December to buy $10,000 of copper.
+    - Dr. Copper (+A)   $10,000
+    - Cr. Accounts Payable (+L)     $10,000
+
+
+#### Above incorrect, exclude:
+
+- BOC sells batteries costing $8,000 in December for $10,000 cash.
+    - These are product costs, which will become expenses when the batteries are sold. The Cost of Goods Sold expense would be **$8,000 (not $10,000)** in this case. 
+
+
+### Question 3
+Which journal entry reflects the following transaction?:  
+BOC receives a $2,000 cash deposit from a customer for custom goods that will be delivered next year.
+
+** Dr. Cash (+A)    $2,000**  
+    ** Cr. Advances from Customers (+L)    $2,000***
+
+
+### Question 4
+Which journal entry(s) reflects the following transaction?:  
+BOC received $10,000 of cash from a customer who took delivery of goods that originally cost BOC $8,000 to acquire.
+
+** Dr. Cash (+A)    $10,000**  
+    ** Cr. Revenue (+R, +SE)    $10,000**  
+** Dr. Cost of Goods Sold (+E, -SE)    $8,000**  
+    ** Cr. Inventory (-A)   $8,000**
+    
+    
+### Question 5
+How much quarterly depreciation expense would be recognized for a building that originally cost $100,000 and has an estimated useful life of 10 years with a $20,000 salvage value?
+
+```{r}
+(100e3 - 20e3) / 10
+```
+
+#### Above incorrect, quarterly:
+```{r}
+(100e3 - 20e3) / 10 / 4
+```
+
+
+### Question 6
+Which journal entry reflects the adjusting entry needed on December 31?:  
+In November, BOC prepaid $30,000 of rent for December, January, and February (and it was recorded properly). Now, it is December 31, the end of the fiscal year.  
+
+**Dr.  Rent Expense (+E, -SE)        10,000**  
+    **Cr.  Prepaid Rent (-A)                   10,000**
+
+
+### Question 7
+Which journal entry reflects the adjusting entry needed on December 31?:  
+Last year, BOC purchased a building for $1,000,000. The expected life of the building is 20 years and its expected salvage value is $200,000. Now, it is December 31, the end of the fiscal year. No other entries were recorded for this building during the year.
+
+```{r}
+(1e6 - 200e3) / 20
+```
+
+**Dr.  Depreciation Expense (+E, -SE)      40,000**
+    **Cr.  Accumulated Depreciation (+XA, -A)    40,000**
+
+
+### Question 8
+Which journal entry reflects the adjusting entry needed on December 31?:  
+In September, BOC received an order for $500,000 of products that will be delivered and billed in January. Now, it is December 31, the end of the fiscal year, and no prior entry has been recorded for this order.  
+**No entry needed.**
+
+
+### QUestion 9
+Which item would not appear on the Income Statement?  
+**Dividends**
+
+
+### Question 10
+Which of the following are permanent accounts? (check all that apply)  
+
+- **Retained earnings**
+- **Common stock**
+- **Unearned Revenue**
+
+
+
+
+
+
+
