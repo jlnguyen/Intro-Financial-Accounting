@@ -1,0 +1,83 @@
+---
+title: "Wharton Accounting -- Homework 3 | Attempt 2"
+author: "Joe Nguyen"
+date: "15 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+NOTE: Questions not listed are congruous with Attempt 1 Questions.
+
+
+### Question 5
+Which of the following would be shown as a **negative** number in the Operating section of the SCF under the indirect method? (check all that apply)
+
+- **Decrease in Accounts Payable** (liability)
+- **Gain on sale of equipment**
+
+
+Positive:
+
+- Capital Expenditures (investing)
+- Depreciation on a building
+    - (Depreciation is added back to Net Income under the indirect method, so it would be a positive number.)
+- Decrease in Accounts Receivable
+
+
+### Question 9
+During the year, a company sold $500 of inventory, paid $400 to suppliers for inventory previously purchased on account, purchased $100 of inventory for cash, acquired $75 of inventory from another company in an acquisition, and translated into US dollars the value of inventory held in foreign subsidiaries, which increased inventory by $25. Which of these Inventory transactions would **show up** in the operating section of the SCF? (check all that apply)
+
+- **Paid $400 to suppliers for inventory previously purchased on account**
+    - Noncash investing and financing activities
+- **Acquired $75 of inventory from another company in an acquisition**
+    - Acquisitions and divestitures of businesses
+- **The value of inventory held in foreign subsidiaries increased by $25 when translated into US dollars**
+    - Foreign Currency Translation Adjustments
+
+#### Above incorrect, reasoning:
+Acquisitions and foreign currency adjustments were two reasons given in the video for why a number on the SCF might not match the change on the Balance Sheet. Thus, those two transactions will not appear in the operating section. In the other cases, the sale or purchase of Inventory, or payments to suppliers, will show up in the operating section.
+
+Correct answers (opposite to what I thought):
+
+- **Purchased $100 of inventory for cash**
+- **Paid $400 to suppliers for inventory previously purchased on account**
+    - Non-cash operating activity still shows up (investing and financing activities do not)
+- **Sold $500 of inventory**
+
+
+### Question 10
+A company had Revenue of $1000, Depreciation and Amortization Expense of $100, Interest Expense of $100, and Tax Expense of $50. All other Expenses were $500. What was the company’s EBITDA?
+
+| Revenue | 1,000 |
+| --- | --- |
+| Depreciation and Amortization Expense | (100) |
+| Interest Expense | (100) | 
+| Tax Expense | (50) |
+| Other Expenses | (500) |
+| **Net Income** | 250 |
+
+| **Net Income** | 250 |
+| Depreciation and Amortization Expense | 100 |
+| Interest Expense | 100 | 
+| Tax Expense | 50 |
+| EBITDA | 500 |
+
+
+
+
+
+
+
+
+

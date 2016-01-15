@@ -35,7 +35,7 @@ Others:
 
 Non-operating:
 - Amortisation of a patent (noncash transaction)
-- Loss on sale of equipment(investing)
+- Loss on sale of equipment (investing)
 
 
 ### Question 2
@@ -63,14 +63,19 @@ Which growth stage best describes this pattern of cash flows?
 #### Above Incorrect, perhaps:
 **Perky (lively)** lots of negative financing cash flow due to issuing of stocks
 
+#### Above Incorrect, perhaps:
+**Early growth** due to issuing of stocks (financing), since **Perky** is not a formal stage name
+
 
 ### Question 4
 A company bought $50,000 of inventory for $20,000 cash, with the balance due to the supplier in 30 days. What is the operating cash flow in this transaction?  
 **($20,000)**
 
+You can think of this as two transactions. First, the company bought $20,000 of inventory with cash. This is an operating cash flow. Second, the company bought $30,000 of inventory on account. This is a non-cash transaction. So, the operating cash flow is ($20,000).
+
 
 ### Question 5
-Which of the following would be shown as a positive number in the Operating section of the SCF under the indirect method? (check all that apply)  
+Which of the following would be shown as a **positive** number in the Operating section of the SCF under the indirect method? (check all that apply)  
 
 For indirect method, subtract debits and add credits to keep cash neutral:
 $$
