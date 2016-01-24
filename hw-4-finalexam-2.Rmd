@@ -100,6 +100,8 @@ What was the book value of the equipment Stewart sold during the year ended 03/3
 
 #### Incorrect
 
+**$1,100** (700 + 400)
+
 
 ### Question 5
 Little Scuba Pty had the following line item on its 12/31/2014 Balance Sheet:
