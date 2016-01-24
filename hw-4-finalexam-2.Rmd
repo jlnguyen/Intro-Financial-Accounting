@@ -1,0 +1,216 @@
+---
+title: "Wharton Accounting -- Final Exam, Part 2"
+author: "Joe Nguyen"
+date: "24 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+
+### Question 1
+During the quarter ended 3/31/2015, Clarke Biscuits Inc. collected $100 of cash from customers, paid $60 of cash to suppliers, paid $20 of cash to employees and other creditors, and recorded $10 of depreciation expense. There were no other cash flows related to operating activities.
+
+What was Clarke’s Cash Flow from Operations during the quarter ended 3/31/2015?
+
+```{r}
+customers <- 100
+suppliers <- -60
+employees <- -20
+deprec <- -10
+
+cf <- customers + suppliers + employees + deprec; cf
+```
+
+#### Incorrect
+Should be **$20**, depreciation not included in operating CF.
+
+
+### Question 2
+During 2015, Rindal Vinyards Inc. had Revenue of $1000, Depreciation and Amortization Expense of $100, Interest Expense of $100, and Tax Expense of $50. All other Expenses were $400. What was Rindal Vinyards’ EBITDA for 2015? 
+
+```{r}
+1000 + (100 + 100 + 50)
+```
+**EBITDA = 1000**
+
+
+#### Incorrect
+
+Net Income = Revenue - Expenses (COGS) - Interest Expense - Tax Expense - Deprec
+Net Income = 1000 - 400 - 100 - 100 - 50 = 350
+
+EBITDA = Net Income + Tax Expense + Interest Expense + Deprec
+EBITDA = 350 + 50 + 100 + 100 = **600**
+
+
+### Question 3
+Geller Florist Inc. had the following transactions during 2015:
+
+Purchased a $200,000 warehouse with $50,000 cash and a $150,000 mortgage from a bank.
+
+Raised $100,000 from selling new shares of stock to investors. The cash was used to buy land to grow tulips.
+
+Sold an old building for $50,000 (and suffered a loss on sale of $5,000) and used the cash to buy a new truck.
+
+What is the net impact of these transactions on Geller's Cash from Financing Activities during 2015?
+
+Transaction     | Cash      | Operating | Investing | Financing
+---             | ---       | ---       | ---       | ---
+Buy Bldg        | (50,000)  |           |           | 150,000
+Sell Shares     | 100,000   |           |           | 100,000
+Sell Bldg       |  50,000   |           | 50,000    |
+Loss on sale    |  (5,000)  |           | (5,000)   |
+Buy truck       |  50,000   |           | 50,000    |
+
+**$250,000**
+
+
+### Question 4
+
+Stewart Export Co. had the following Statement of Cash Flows for the year ended 03/31/15:
+
+($ millions) |	Year ended 3/31/15
+ --- | --- 
+Net Income |	1100
+Depreciation |	200
+Loss on sale of equipment |	400
+Chg in Accounts Receivable |	350
+Chg in Inventory |	(200)
+Chg in Other Assets |	100
+Chg in Accounts Payable |	(50)
+Chg in Other Payables |	150
+Net Cash from Operations |	2050
+Capital Expenditures |	(1200)
+Sale of Equipment | 	700
+Net Cash from Investing |	(500)
+
+What was the book value of the equipment Stewart sold during the year ended 03/31/15?  
+**$700**
+
+#### Incorrect
+
+
+### Question 5
+Little Scuba Pty had the following line item on its 12/31/2014 Balance Sheet:
+
+Item    | 12/31/2014
+---     | ---
+Accounts Payable    |	$10,000
+
+Little Scuba’s Statement of Cash Flows had the following line item:
+
+Item    |	2014
+---     | ---
+Change in Accounts Payable  |	$4,000
+
+Assume that the company made no acquisitions or divestitures and that all operations are in Australia. How much Accounts Payable did Little Scuba have on 12/31/2013?  
+**$6,000**
+
+
+### Question 6
+A new accountant, Tia Count, put together a preliminary version of Medina Co.'s financial statements. Medina's Net Income was $500, its Depreciation Expense was $100, and its Cash Flow from Operations was $70. The CEO found an error that Tia made in computing straight-line Depreciation Expense, which should have been $150. What is Medina's Cash Flow from Operations after fixing this mistake? (you can ignore taxes)
+
+Item    |   SCF
+---     |   ---
+Sales   |   650
+COGS    |   (50)
+Deprec  |   (100)
+**NI**  |   500
+
+Item        |   Direct SCF
+---         |   ---
+Collection  |   120
+Payment     |   (50)
+Operating Cash Flow     |   70
+
+Item            |   Indirect SCF
+---             |   ---
+Net Income      |   500
+Incr. in A/R    |   (650-120) = (530)
+Depreciation Expense    |   100
+Operating Cash Flow     |   70
+
+**$70** Take out $150 in SCF, put back in $150 in Indirect SCF
+
+
+### Question 7
+Joe Doakes was reading the balance sheet of Gogoldze Inc. when he spilled coffee on it. After the coffee spill, the balance sheet looked like this:
+
+($ millions)    |	12/13/2015
+---             |   ---
+Cash    |   100
+Accounts Receivable    |	245
+Inventory    |	450
+Other Current Assets    |	60
+Current Assets    |	855
+Net Property, Plant, & Equipment    |	1,160
+Total Assets    |	2,015
+Accounts Payable    |	160
+Other Current Liabilities    | 	250
+Current Liabilities    | 	410
+Long-term Liabilities    |	900
+Common Stock    |	50
+Additional Paid-in Capital    |	300
+Retained Earnings    |	coffee
+Total Liabilities and SE    |	coffee
+
+What was Gogoldze Inc.'s Retained Earnings at 12/31/2015?
+
+Total Assets = Liabilities + Stockholders' Equity
+
+```{r}
+assets <- 2015
+liab <- 160 + 250 + 410 + 900
+
+se <- assets - liab
+
+re <- se - 50 - 300
+re
+```
+
+#### Incorrect
+```{r}
+assets <- 2015
+liab <- 410 + 900
+
+se <- assets - liab
+
+re <- se - 50 - 300
+re
+```
+**$355**
+
+
+### Question 8
+Alejandro Alvera of Alvear Corp was reading the financial statements of Olivas Medical Supply Company to decide whether he wanted to try to acquire the company. He noticed some mistakes in the Olivas Income Statement:
+
+($ millions)    |	Year ended 12/31/2015
+---             |   ---
+Sales revenue    |	$1600
+Interest Revenue    |	50
+Total Revenue    |	1650
+Cost of Goods Sold    |	(800)
+Gross Profit    |	850
+SG&A Expense    |	(400)
+Interest Expense    |	(50)
+Operating Income    |	400
+Gain on sale of equipment    |	200
+Pre-tax income    |	600
+Income Tax Expense    |	(216)
+Net Income    |	384
+
+What is Olivas' Operating Income for the year ended 12/31/2015 after correcting the mistakes?  
+**$450** -- 'Interest Expense' comes after 'Operating Income'
+
+#### Incorrect

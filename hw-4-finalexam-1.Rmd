@@ -1,0 +1,202 @@
+---
+title: "Wharton Accounting -- Final Exam, Part 1"
+author: "Joe Nguyen"
+date: "24 January 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+# Change working directory
+dirBase <- "/home/joe/Documents/01-coursera/02-finance"
+dirWorking <- "/accounting-wharton"
+setwd(paste0(dirBase, dirWorking))
+
+# Generic finance functions
+source(paste0(dirBase, "/01-tvm/r-code/func_finance.R"))
+```
+
+
+### Question 1
+A company delivered $10,000 of goods to a customer that agreed to pay cash within 30 days. The goods had cost $8,000 to manufacture.
+
+Which of the following items would be increased by this sales transaction? (check all that apply)
+
+Dr. Accounts Receivable (+A)    $10,000  
+    Cr. Revenue (+R, +SE)    $10,000  
+Dr. Cost of Goods Sold (+E, -SE)    $8,000  
+    Cr. Inventory (-A)   $8,000
+
+- **Revenue**
+- **Cost of Goods Sold**
+- **Current Assets**
+- **Cash from Operations**
+
+#### Incorrect, remove:
+- **Cash from Operations**
+
+
+### Question 2
+A company took delivery of $50,000 of new inventory and agreed to pay cash to the supplier within 30 days.
+
+Which of the following items would be increased by this inventory purchase transaction? (check all that apply)
+
+Dr. Inventory (+A)    $50,000  
+    Cr. Accounts Payable (+L)    $50,000 
+
+- **Accounts Payable**
+- **Total Assets** (inventory)
+
+
+### Question 3
+A company collected $100,000 cash from a customer who both received and was billed for the goods last quarter.
+
+Which of the following items would be increased by this cash collection transaction? (check all that apply)
+
+Dr. Cash (+A)    $100,000  
+    Cr. Accounts Receivable (-A)    $100,000 
+
+- **Cash**
+- **Cash from operations**
+
+Revenue was booked last quarter.
+
+
+### Question 4
+A company collected $10,000 cash from a customer as a deposit for goods that will be shipped next quarter.
+
+Which of the following items would be increased by this cash collection transaction? (check all that apply)
+
+Dr. Cash (+A)    $10,000  
+    Cr. Advances from Customers (+L)    $10,000 
+
+- **Advances from Customers**
+- **Cash**
+
+
+### Question 5
+A company received $100,000 cash from issuing 10,000 shares of $4 par value stock.
+
+Which of the following items would be increased by this stock issuance transaction? (check all that apply)
+
+Dr. Cash (+A)    $100,000  
+    Cr. Common Stock (+SE)    $40,000
+    Cr. Additional Paid-in Capital (+SE)    $60,000
+
+- **Additional Paid in Capital**
+- **Cash from Financing**
+- **Total Stockholder’s Equity**
+
+
+### Question 6
+A company received $75,000 cash from a bank loan that must be repaid in three years.
+
+Which of the following items would be increased by this specific transaction? (check all that apply)
+
+Dr. Cash (+A)    $75,000  
+    Cr. Accounts Payable (+L)    $75,000
+
+- **Total Liabilities**
+- **Interest Payable**
+- **Cash from Financing**
+- **Total Assets**
+
+Interest expense e.g. accrued interest on a mortgage (during adjusting entries).
+
+#### Incorrect, remove:
+- **Interest Payable**
+
+
+### Question 7
+A company declared $500,000 of dividends that will be paid two months from now.
+
+Which of the following items would be increased by this dividend declaration transaction? (check all that apply)
+
+Dr. Dividends Expenses (+E, -SE)    $500,000  
+    Cr. Dividends Payable (+L)    $500,000
+
+- **Dividends Payable**
+- **Dividends Expenses**
+
+#### Incorrect, remove:
+- **Dividends Expenses**
+
+Dr. Retained Earnings (-RE, -SE)    $500,000  
+    Cr. Dividends Payable (+L)    $500,000
+
+
+### Question 8
+A company paid $50,000 to its insurance company for fire insurance coverage over the next year.
+
+Which of the following items would be increased by this insurance prepayment transaction? (check all that apply)
+
+Dr. Insurance Expense (+E, -SE)    $50,000  
+    Cr. Prepaid Insurance (+XA)    $50,000
+
+- **Prepaid insurance**
+- **Current Assets**
+- **Insurance Expense**
+
+#### Incorrect, remove:
+- **Current Assets**
+- **Insurance Expense**
+
+Dr. Prepaid Insurance (+A)    $50,000  
+    Cr. Cash (-A)    $50,000
+
+
+### Question 9
+At the end of the quarter, a company did an adjusting entry to record the fact that $1,000 of Prepaid Advertising had been used up during the quarter.
+
+Which of the following items would be increased by this advertising adjusting entry? (check all that apply)
+
+Dr. Advertising Expense (+E, -SE)    $1,000  
+    Cr. Prepaid Advertising (-A)    $1,000
+
+- **SG&A Expense**
+
+
+### Question 10
+A company borrowed $500,000 cash from a bank and used it to purchase $500,000 of new manufacturing equipment.
+
+Which of the following items would be increased by the bank loan and equipment purchase transactions? (check all that apply)
+
+Dr. Cash (+A)    $500,000  
+    Cr. Notes Payable (+L)    $500,000  
+Dr. Equipment (+A)      $500,000  
+    Cr. Expense (+E, -SE)       $500,000
+
+- **Cash from Financing**
+- **Total Liabilities**
+- **Equipment**
+
+
+### Question 11
+At the end of the quarter, a company did an adjusting entry to record $5,000 of depreciation on the fleet of automobiles used by the sales force.
+
+Which of the following items would be increased by this depreciation adjusting entry? (check all that apply)
+
+Dr. SG&A Expense (+E, -SE)    $5,000  
+    Cr. Accumulated Depreciation (+XA)    $5,000  
+
+- **Accumulated Depreciation**
+- **SG&A Expense**
+
+
+### Question 12
+A company sold a piece of manufacturing equipment for $30,000 cash. The equipment had been listed on the balance sheet at a net book value of $25,000, so the company recorded a gain on sale of equipment of $5,000.
+
+Which of the following items would be increased by this equipment sale transaction? (check all that apply)
+
+Dr. Cash (+A)    $5,000  
+    Cr. gain on sale of equipment (+R, +SE)    $5,000  
+
+- **Cash from Investing**
+
+#### Incorrect, add:
+- **Retained Earnings**
+
+
+
+
